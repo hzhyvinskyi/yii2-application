@@ -10,7 +10,12 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
 		'formatter' => [
+			'dateFormat' => 'dd.MM.yyyy',
+			'decimalSeparator' => ',',
+			'thousandSeparator' => ' ',
+			'currencyCode' => 'EUR',
 			'timeZone' => 'Europe/Kiev',
-		]
+			'locale' => 'ru-RU'
+		],
     ],
 ];
