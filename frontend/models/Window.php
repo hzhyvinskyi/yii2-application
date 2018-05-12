@@ -6,7 +6,7 @@ use yii\base\Model;
 use Yii;
 
 /**
- * Windor order model
+ * Window order model
  * @package frontend\models
  */
 class Window extends Model

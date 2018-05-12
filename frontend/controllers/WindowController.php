@@ -8,6 +8,10 @@ use Yii;
 
 class WindowController extends Controller
 {
+	/**
+	 * Window order action
+	 * @return string
+	 */
 	public function actionOrder()
 	{
 		$model = new Window();
