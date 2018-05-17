@@ -65,4 +65,13 @@ class Employee extends Model
 
 		return Yii::$app->db->createCommand($sql)->execute();
 	}
+
+	public static function getWagesList($limit = null)
+	{
+		$limit = intval($limit);
+
+		$sql = "SELECT first_name, last_name, wages FROM employee ORDER BY wages DESC LIMIT {$limit}";
+
+		return Yii::$app->db->createCommand($sql)->queryAll();
+	}
 }
