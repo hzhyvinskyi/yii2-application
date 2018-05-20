@@ -7,4 +7,5 @@ return [
 	'aboutNewsLimit' => 7,
 	'wagesLimit' => 6,
 	'aboutWagesLimit' => 4,
+	'appName' => 'Start bootstrap',
 ];

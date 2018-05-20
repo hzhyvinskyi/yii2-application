@@ -56,5 +56,6 @@ return [
 		'@photos' => '@files/photos',
 		'@example' => '@app/models/example',
 		'@newsList' => '@app/widgets/newsList',
-	]
+		'@images' => '/files/photos',
+	],
 ];
