@@ -4,6 +4,7 @@ namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 class Employee extends Model
 {
@@ -43,7 +44,7 @@ class Employee extends Model
 			[['email'], 'email'],
 			[['middleName'], 'required', 'on' => self::SCENARIO_EMPLOYEE_UPDATE],
 			[['birthDate', 'workSince'], 'date', 'format' => 'php:Y-m-d'],
-			['city', 'integer'],
+			//['city', 'integer'],
 			['position', 'string'],
 			['code', 'string', 'length' => 10],
 		];
@@ -80,5 +81,14 @@ class Employee extends Model
 		$sql = "SELECT * FROM employee";
 
 		return Yii::$app->db->createCommand($sql)->queryAll();
+	}
+
+	public function getCitiesList()
+	{
+		$sql = "SELECT * FROM city";
+
+		$result = Yii::$app->db->createCommand($sql)->queryAll();
+
+		return ArrayHelper::map($result, 'id', 'name');
 	}
 }
