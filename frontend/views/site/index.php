@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
 
-use Yii;
 use yii\helpers\Url;
 use frontend\widgets\newsList\NewsList;
 use frontend\widgets\wagesList\WagesList;
@@ -13,7 +12,7 @@ $this->title = 'My Yii Application';
 	<a href="<?=Yii::$app->urlManager->createUrl(['news/base']);?>" class="btn btn-danger">News count</a>
     <div class="jumbotron">
         <h1>Congratulations!</h1>
-
+		<?php if (Yii::$app->user->identity) echo Yii::$app->user->identity->username; ?>
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
         <p><a class="btn btn-lg btn-success" href="<?=Url::to(['newsletter/subscribe'])?>">Subscribe to newsletter</a></p>
