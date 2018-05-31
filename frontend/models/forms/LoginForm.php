@@ -25,6 +25,9 @@ class LoginForm extends Model
 		];
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function login()
 	{
 		if ($this->validate()) {
@@ -36,6 +39,10 @@ class LoginForm extends Model
 		return false;
 	}
 
+	/**
+	 * @param $attribute
+	 * @param $params
+	 */
 	public function validatePassword($attribute, $params)
 	{
 		$user = User::findByUserName($this->username);

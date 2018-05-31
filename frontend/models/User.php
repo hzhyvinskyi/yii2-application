@@ -46,11 +46,23 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         ];
     }
 
+	/**
+	 * Finds user's record by the username
+	 *
+	 * @param $username
+	 * @return array|null|\yii\db\ActiveRecord
+	 */
     public static function findByUserName($username)
 	{
 		return self::find()->where(['username' => $username])->one();
 	}
 
+	/**
+	 * Compare passwords
+	 *
+	 * @param $password
+	 * @return bool
+	 */
 	public function validatePassword($password)
 	{
 		return Yii::$app->security->validatePassword($password, $this->password_hash);
