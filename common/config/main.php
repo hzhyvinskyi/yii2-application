@@ -17,5 +17,8 @@ return [
 			'timeZone' => 'Europe/Kiev',
 			'locale' => 'ru-RU'
 		],
+		'emailService' => [
+			'class' => 'common\components\EmailService',
+		],
     ],
 ];
