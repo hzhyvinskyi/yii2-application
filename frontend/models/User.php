@@ -120,10 +120,6 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 	/**
 	 * @return string
 	 */
-	public function getEmail()
-	{
-		return $this->email;
-	}
 
 	public function init()
 	{
