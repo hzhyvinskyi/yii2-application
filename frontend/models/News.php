@@ -4,17 +4,46 @@ namespace frontend\models;
 
 use Yii;
 
-class News
+/**
+ * This is the model class for table "news".
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $content
+ * @property int $status
+ */
+class News extends \yii\db\ActiveRecord
 {
-	/**
-	 * Returns amount of records in table 'news'
-	 * @return array|false
-	 * @throws \yii\db\Exception
-	 */
-	public static function getNewsCount()
-	{
-		$sql = "SELECT COUNT(*) FROM news";
+    /**
+     * @inheritdoc
+     */
+    public static function tableName()
+    {
+        return 'news';
+    }
 
-		return Yii::$app->db->createCommand($sql)->queryScalar();
-	}
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        return [
+            [['content'], 'string'],
+            [['title'], 'string', 'max' => 50],
+            [['status'], 'integer', 'max' => 2],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'title' => 'Title',
+            'content' => 'Content',
+            'status' => 'Status',
+        ];
+    }
 }
