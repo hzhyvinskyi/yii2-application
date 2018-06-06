@@ -38,6 +38,8 @@ $this->title = 'My Yii Application';
                     fugiat nulla pariatur.</p>
 
                 <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+				<a href="<?= Url::to(['search/index']) ?>">Indexed search</a><br>
+				<a href="<?= Url::to(['search/advanced']) ?>">Sphinx search</a>
             </div>
         </div>
 

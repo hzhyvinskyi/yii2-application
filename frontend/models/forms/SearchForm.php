@@ -27,4 +27,11 @@ class SearchForm extends Model
 			return $model = NewsSearch::FullTextSearch($this->keyword);
 		}
 	}
+
+	public function searchAdvanced()
+	{
+		if ($this->validate()) {
+			return $model = NewsSearch::AdvancedSearch($this->keyword);
+		}
+	}
 }
