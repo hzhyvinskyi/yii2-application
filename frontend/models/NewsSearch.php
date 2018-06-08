@@ -17,9 +17,13 @@ class NewsSearch
 
 	public static function fullTextSearch($keyword)
 	{
-		$sql = "SELECT * FROM news WHERE MATCH (content) AGAINST ('$keyword') LIMIT 20";
+		$params = [
+			':keyword' => $keyword,
+		];
 
-		return Yii::$app->db->createCommand($sql)->queryAll();
+		$sql = "SELECT * FROM news WHERE MATCH (content) AGAINST (:keyword) LIMIT 20";
+
+		return Yii::$app->db->createCommand($sql)->bindValues($params)->queryAll();
 	}
 
 	public static function AdvancedSearch($keyword)
